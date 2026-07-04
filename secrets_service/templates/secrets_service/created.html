@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ссылка готова!</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+<body class="bg-[#0f172a] text-slate-200 font-sans min-h-screen flex items-center justify-center p-4">
+
+    <div class="max-w-xl w-full bg-[#1e293b] rounded-2xl shadow-2xl border border-slate-700/50 p-8 text-center space-y-6">
+        <div class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-emerald-500/10 text-emerald-400 text-3xl mb-2">
+            🔗
+        </div>
+        
+        <div class="space-y-2">
+            <h1 class="text-2xl font-bold text-slate-100">Ссылка успешно создана!</h1>
+            <p class="text-sm text-slate-400">
+                Скопируйте её и передайте получателю. Открыть её можно <span class="text-amber-400 font-semibold">только один раз</span>.
+            </p>
+        </div>
+
+        <div class="relative bg-[#0f172a] border border-slate-700 rounded-xl p-4 flex items-center justify-between gap-4 group">
+            <code class="text-sm text-emerald-400 font-mono select-all break-all text-left flex-1">
+                {{ secret_url }}
+            </code>
+        </div>
+
+        <div class="pt-4 border-t border-slate-700/50">
+            <a href="{% url 'create_secret' %}" class="text-sm text-slate-400 hover:text-emerald-400 transition inline-flex items-center gap-2">
+                ← Создать еще один секрет
+            </a>
+        </div>
+    </div>
+
+</body>
+</html>
